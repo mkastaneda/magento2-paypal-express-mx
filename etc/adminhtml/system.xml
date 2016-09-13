@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MMDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDMMM
+ * MDDDDDDDDDDDDDNNDDDDDDDDDDDDDDDDD=.DDDDDDDDDDDDDDDDDDDDDDDMM
+ * MDDDDDDDDDDDD===8NDDDDDDDDDDDDDDD=.NDDDDDDDDDDDDDDDDDDDDDDMM
+ * DDDDDDDDDN===+N====NDDDDDDDDDDDDD=.DDDDDDDDDDDDDDDDDDDDDDDDM
+ * DDDDDDD$DN=8DDDDDD=~~~DDDDDDDDDND=.NDDDDDNDNDDDDDDDDDDDDDDDM
+ * DDDDDDD+===NDDDDDDDDN~~N........8$........D ........DDDDDDDM
+ * DDDDDDD+=D+===NDDDDDN~~N.?DDDDDDDDDDDDDD:.D .DDDDD .DDDDDDDN
+ * DDDDDDD++DDDN===DDDDD~~N.?DDDDDDDDDDDDDD:.D .DDDDD .DDDDDDDD
+ * DDDDDDD++DDDDD==DDDDN~~N.?DDDDDDDDDDDDDD:.D .DDDDD .DDDDDDDN
+ * DDDDDDD++DDDDD==DDDDD~~N.... ...8$........D ........DDDDDDDM
+ * DDDDDDD$===8DD==DD~~~~DDDDDDDDN.IDDDDDDDDDDDNDDDDDDNDDDDDDDM
+ * NDDDDDDDDD===D====~NDDDDDD?DNNN.IDNODDDDDDDDN?DNNDDDDDDDDDDM
+ * MDDDDDDDDDDDDD==8DDDDDDDDDDDDDN.IDDDNDDDDDDDDNDDNDDDDDDDDDMM
+ * MDDDDDDDDDDDDDDDDDDDDDDDDDDDDDN.IDDDDDDDDDDDDDDDDDDDDDDDDDMM
+ * MMDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDMMM
+ *
+ * @author Tadeo Barranco <tadeo@qbo.tech>
+ * @category Qbo
+ * @package qbo\PayPalMX\
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+    	<section id="payment_us">
+    		<group id="paypal_alternative_payment_methods">
+    			<label>PayPal Express Checkout (México)</label>
+    		</group>
+    	</section>
+    	<section id="payment_all_paypal">
+    		<group id="express_checkout">
+    			<label>Express Checkout (México)</label>
+
+                <group id="express_checkout_required">
+                    <field id="penging_payment_message" translate="label" type="text" sortOrder="22" showInDefault="1" showInWebsite="1">
+                        <label>Pending Message</label>
+                        <config_path>payment/paypal_express/pending_message</config_path>
+                        <requires>
+                            <group id="enable_express_checkout"/>
+                        </requires>
+                    </field>
+                </group>
+            </group>
+        </section>
+
+    </system>
+</config>

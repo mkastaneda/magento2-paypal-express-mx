@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Paypal\Block\Express\Shortcut">
+        <arguments>
+            <argument name="shortcutTemplate" xsi:type="string">qbo_PayPalMX::express/shortcut.phtml</argument>
+        </arguments>
+    </type>
+    <preference for="Magento\Paypal\Controller\Express\Start" type="qbo\PayPalMX\Controller\Express\Start" />
+</config>
