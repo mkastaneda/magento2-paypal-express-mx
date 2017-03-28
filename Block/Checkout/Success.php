@@ -4,6 +4,7 @@ namespace qbo\PayPalMX\Block\Checkout;
 
 class Success extends \Magento\Checkout\Block\Onepage\Success
 {
+    const SCOPE_STORE = 'store';
     const PAYPAL_LOGO                      = 'https://www.paypalobjects.com/webstatic/mktg/logo-center/logotipo_paypal_pagos_seguros.png';
     const PENDING_PAYMENT_STATUS_CODE      = 'payment_review';
     
@@ -39,13 +40,13 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
         \Magento\Checkout\Model\Session $checkoutSession,
         \Magento\Sales\Model\Order\Config $orderConfig,
         \Magento\Framework\App\Http\Context $httpContext,
-        array $data = [],
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-        \Magento\Sales\Model\OrderFactory $orderFactory
+        \Magento\Sales\Model\OrderFactory $orderFactory,
+        array $data = []
     )
     {
         parent::__construct($context, $checkoutSession, $orderConfig, $httpContext, $data);
-        $this->_scopeconfig = $scopeConfig;
+        
+        $this->_scopeconfig = $context->getScopeConfig();
         $this->_orderFactory = $orderFactory;
     }
     /**
@@ -120,7 +121,7 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
     {
         $value =  $this->_scopeConfig->getValue(
             $configPath,
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            self::SCOPE_STORE
         ); 
         return $value;
     }
