@@ -78,6 +78,7 @@
     </div>
 </div>
 
+<!-- ko if: getIsInstallmentEnabled() -->
 <div class="payment-method" data-bind="css: {'_active': (getCode('Installments') == isChecked())}">
     <div class="payment-method-title field choice">
         <input type="radio"
@@ -114,3 +115,5 @@
         </div>
     </div>
 </div>
+<!--/ko-->
+

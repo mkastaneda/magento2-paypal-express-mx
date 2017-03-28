@@ -41,7 +41,10 @@ define(
             isChecked: ko.computed(function () {
                 return quote.paymentMethod() ? quote.paymentMethod().method : null;
             }),
-
+            getIsInstallmentEnabled: function(){
+            	var enable = window.checkoutConfig.payment.paypalExpress.config.enable_installment;
+            	return enable == 0 ? false : true;
+            },
             selectPaymentMethodExpress: function() {
                 var data = this.getData();
                 data.method = data.method + "_Express";

@@ -6,6 +6,9 @@
  * and open the template in the editor.
  */
 namespace qbo\PayPalMX\Controller\Express;
+use Magento\Framework\App\Action\AbstractAction;
+use Magento\Paypal\Controller\Express\AbstractExpress;
+
 /**
  * Extended Start controller to override PayPal Express Config Type and get custom BN Code
  * @see qbo\PayPalMX\Model\Config
@@ -19,4 +22,5 @@ class Start extends \Magento\Paypal\Controller\Express\Start {
      * @var string
      */
     protected $_configType = 'qbo\PayPalMX\Model\Config';
+
 }
