@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -6,6 +5,7 @@
  */
 ?>        
 <!-- Custom PPMX additional info -->
+<?php $block->_initOrder(); ?>
 <?php if($block->getIsMethodActive()) : ?>
     <!-- Add Custom PayPal Message for pending payments -->
     <?php if ($block->isPaymentPending() && !empty($block->getPendingMessage())) : ?>

@@ -7,6 +7,8 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
     const SCOPE_STORE = 'store';
     const PAYPAL_LOGO                      = 'https://www.paypalobjects.com/webstatic/mktg/logo-center/logotipo_paypal_pagos_seguros.png';
     const PENDING_PAYMENT_STATUS_CODE      = 'payment_review';
+    const XML_PATH_PENDING_MESSAGE = 'payment/express_checkout_other/express_checkout_required/penging_payment_message';
+    const XML_PATH_IS_ACTIVE       = 'payment/paypal_express/active';
     
     /**
      * @var \Magento\Framework\App\Config\ScopeConfigInterfaced
@@ -21,12 +23,12 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
      *
      * @var \Magento\Sales\Model\Order 
      */
-    private $_order = false;    
+    protected $_order;    
     /**
      *
      * @var \Magento\Sales\Model\Order 
      */
-    private $_methods = ['paypal_express','qbo_paypalplusmx'];
+    private $_methods = ['paypal_express','express_checkout_other','qbo_paypalplusmx'];
     /**
      * Constructor method
      * 
@@ -44,10 +46,12 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
         array $data = []
     )
     {
-        parent::__construct($context, $checkoutSession, $orderConfig, $httpContext, $data);
-        
-        $this->_scopeconfig = $context->getScopeConfig();
+	$this->_scopeconfig = $context->getScopeConfig();
         $this->_orderFactory = $orderFactory;
+        $this->_initOrder();
+        
+        parent::__construct($context, $checkoutSession, $orderConfig, $httpContext, $data);
+       
     }
     /**
      * Get if method is active
@@ -56,10 +60,9 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
      */
     public function getIsMethodActive()
     {
-        $this->_initOrder();
         if($this->_order->getPayment() && in_array($this->_order->getPayment()->getMethod(), $this->_methods)) {
             $code = $this->_order->getPayment()->getMethod();
-            return $this->getConfigValue("payment/{$code}/active");
+            return $this->getConfigValue(self::XML_PATH_IS_ACTIVE);
         }
         return false;
     }
@@ -69,10 +72,12 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
      * 
      * @return \Magento\Sales\Model\Order
      */
-    protected function _initOrder()
+    public function _initOrder()
     {
         /** @var \Magento\Sales\Model\Order $order */
         $this->_order = $this->_orderFactory->create()->loadByIncrementId($this->getOrderId());
+
+	return $this->_order;
     }
     /**
      * Check if order has pending payment status
@@ -81,6 +86,8 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
      */
     public function isPaymentPending()
     {
+        //$this->_initOrder();
+
         if($this->_order->getStatus() == self::PENDING_PAYMENT_STATUS_CODE){
             return true;
         }
@@ -95,7 +102,7 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
     {
         if($this->isPaymentPending()) {
             $code = $this->_order->getPayment()->getMethod();
-            return $this->getConfigValue("payment/{$code}/pending_payment_message");
+            return $this->getConfigValue(self::XML_PATH_PENDING_MESSAGE);
         }
         return '';
     }
@@ -106,7 +113,6 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
      */
     public function getPayPalLogo()
     {
-        $this->_initOrder();
         if(!$this->_order->getPayment()){
             return;
         }
@@ -119,7 +125,7 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
      */
     public function getConfigValue($configPath)
     {
-        $value =  $this->_scopeConfig->getValue(
+        $value = $this->_scopeConfig->getValue(
             $configPath,
             self::SCOPE_STORE
         ); 
