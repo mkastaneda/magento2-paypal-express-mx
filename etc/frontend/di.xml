@@ -6,11 +6,11 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-
-    <type name="Magento\Paypal\Block\Express\Shortcut">
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
-            <argument name="shortcutTemplate" xsi:type="string">qbo_PayPalMX::express/shortcut.phtml</argument>
+            <argument name="configProviders" xsi:type="array">
+                <item name="qbo_paypalmx_config_provider" xsi:type="object">qbo\PayPalMX\Model\ConfigProvider</item>
+            </argument>
         </arguments>
     </type>
-    <preference for="Magento\Paypal\Controller\Express\Start" type="qbo\PayPalMX\Controller\Express\Start" />
 </config>
