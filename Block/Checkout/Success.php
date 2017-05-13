@@ -28,7 +28,7 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
      *
      * @var \Magento\Sales\Model\Order 
      */
-    private $_methods = ['paypal_express','express_checkout_other','qbo_paypalplusmx'];
+    private $_methods = ['paypal_express','express_checkout_other'];
     /**
      * Constructor method
      * 
