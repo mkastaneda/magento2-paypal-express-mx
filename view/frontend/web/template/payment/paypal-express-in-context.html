@@ -4,17 +4,41 @@
  * See COPYING.txt for license details.
  */
 -->
+<div class="how-paypal tooltip">
+	<a href="#">
+		¿Que es <span class="name-paypal">PayPal</span>?
+	</a>
+	 <div class="tooltiptext tooltip-right">
+	 	<div class="img-banner-paypal">
+   			<div class="text-banner-paypal" >
+				<img class="img-banner-who" src="https://www.paypalobjects.com/webstatic/icon/pp258.png">
+				<span class="text-banner-who">¿Qué es PayPal?</span>
+			</div>
+		</div>
+	 	<span class="info-text-paypal">
+	 		<ol>
+	 			<li>Es un método de pago fácil, rápido y seguro.</li>
+	 			<li>Puede realizar pagos con sus tarjetas de crédito y débito.</li>
+	 			<li>Deberá de registrarse en <b>PayPal</b> con sus datos financieros solo una vez. No necesitará proporcionar sus datos en compras posteriores.</li>
+	 			<li>Más de 100 millones de personas en el mundo utilizan <b>PayPal</b></li>
+	 			<li><b>PayPal</b> protege su información: No compartimos sus datos financieros.</li>
+	 		</ol>
+	 	</span>
+	 </div>
+</div>
 <div class="payment-method" data-bind="css: {'_active': (getCode('Express') == isChecked())}">
     <div class="payment-method-title field choice">
         <input type="radio"
                name="payment[method]"
                class="radio checkRadio"
                data-bind="attr: {'id': getCode('Express')}, value: getCode('Express'), checked: isChecked, click: selectPaymentMethodExpress, visible: isRadioButtonVisible()" />
-        <label data-bind="attr: {'for': getCode('Express')}" class="label">
+<!--         <label data-bind="attr: {'for': getCode('Express')}" class="label"> -->
 <!--             PayPal Logo -->
-            <img data-bind="attr: {src: getPaymentAcceptanceCcSrc(), alt: $t('Acceptance Mark')}"
-                 class="payment-icon"/>
-        </label>
+<!--             <img data-bind="attr: {src: getPaymentAcceptanceCcSrc(), alt: $t('Acceptance Mark')}" -->
+<!--                  class="payment-icon"/> -->
+	        <div class="payment-icon paypal-img-banner"> </div>
+
+<!--         </label> -->
     </div>
     <div class="payment-method-content">
 <!--         ko foreach: getRegion('messages') -->
@@ -34,36 +58,40 @@
     </div>
 </div>
 
-<div class="payment-method" data-bind="css: {'_active': (getCode('Cards') == isChecked())}">
-    <div class="payment-method-title field choice">
-        <input type="radio"
-               name="payment[method]"
-               class="radio checkRadio"
-               data-bind="attr: {'id': getCode('Cards')}, value: getCode('Cards'), checked: isChecked, click: selectPaymentMethodCarts, visible: isRadioButtonVisible()" />
-        <label data-bind="attr: {'for': getCode('Cards')}" class="label">
+<!--  *******************************************************************  -->
+<!--  ****************** METODO TARJETAS DE DEBITO **********************  -->
+<!--  *******************************************************************  -->
+
+<!-- <div class="payment-method" data-bind="css: {'_active': (getCode('Cards') == isChecked())}"> -->
+<!--     <div class="payment-method-title field choice"> -->
+<!--         <input type="radio" -->
+<!--                name="payment[method]" -->
+<!--                class="radio checkRadio" -->
+<!--                data-bind="attr: {'id': getCode('Cards')}, value: getCode('Cards'), checked: isChecked, click: selectPaymentMethodCarts, visible: isRadioButtonVisible()" /> -->
+<!--         <label data-bind="attr: {'for': getCode('Cards')}" class="label"> -->
             <!-- PayPal Logo -->
-            <img data-bind="attr: {src: getPaymentAcceptanceDcSrc(), alt: $t('Acceptance Mark')}"
-                 class="payment-icon"/>
-            
-        </label>
-    </div>
-    <div class="payment-method-content">
+<!--             <img data-bind="attr: {src: getPaymentAcceptanceDcSrc(), alt: $t('Acceptance Mark')}" -->
+<!--                  class="payment-icon"/> -->
+<!--         </label> -->
+<!--     </div> -->
+<!--     <div class="payment-method-content"> -->
         <!-- ko foreach: getRegion('messages') -->
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!--/ko-->
 <!--         <fieldset class="fieldset" data-bind='attr: {id: "payment_form_" + getCode('Cards')}'> -->
             <!-- ko template: 'Magento_Paypal/payment/express/billing-agreement' --><!-- /ko -->
 <!--         </fieldset> -->
-        <div class="checkout-agreements-block">
+<!--         <div class="checkout-agreements-block"> -->
             <!-- ko foreach: $parent.getRegion('before-place-order') -->
                 <!-- ko template: getTemplate() --><!-- /ko -->
             <!--/ko-->
-        </div>
-        <div class="actions-toolbar">
-            <div class="primary" data-bind="attr: {'id': getCode('Cards_button')}"></div>
-        </div>
-    </div>
-</div>
+<!--         </div> -->
+<!--         <div class="actions-toolbar"> -->
+<!--             <div class="primary" data-bind="attr: {'id': getCode('Cards_button')}"></div> -->
+<!--         </div> -->
+<!--     </div> -->
+<!-- </div> -->
+
 <!-- ko if: getIsInstallmentEnabled() -->
 <div class="payment-method" data-bind="css: {'_active': (getCode('Installments') == isChecked())}">
     <div class="payment-method-title field choice">

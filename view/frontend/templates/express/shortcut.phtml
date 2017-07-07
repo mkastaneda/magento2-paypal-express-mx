@@ -9,6 +9,19 @@
  * @var \Magento\Paypal\Block\Express\Shortcut $block
  */
 ?>
+<style>
+.text-bellow-ppb{
+    color: #039ee1;
+    width: 100%;
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+}
+.box-tocart .paypal:first-of-type{
+    margin-top: 0;
+}
+</style>
 <?php
 $labelPosition = '';
 if ($block->isOrPositionBefore()) {
@@ -36,11 +49,13 @@ if ($block->getConfirmationUrl() || $block->getIsInCatalogProduct()) {
             }
      }'
     >
+    
     <input type="image" data-action="checkout-form-submit"
            data-checkout-url="<?php echo $block->escapeUrl($block->getCheckoutUrl()); ?>"
-           src="https://www.paypalobjects.com/webstatic/es_MX/mktg/logos-buttons/redesign/btn_10.png"
+           src="<?php echo $block->getViewFileUrl('qbo_PayPalMX::img/buttonPpMx.png'); ?>"
            alt="<?php echo $block->escapeHtml(__('Checkout with PayPal')); ?>"
            title="<?php echo $block->escapeHtml(__('Checkout with PayPal')); ?>"/>
+    <span class="text-bellow-ppb">La forma rápida y segura de pagar</span>
     <?php if ($block->getAdditionalLinkImage()): ?>
         <?php $linkImage = $block->getAdditionalLinkImage(); ?>
         <a href="<?php echo $block->escapeUrl($linkImage['href']);?>">

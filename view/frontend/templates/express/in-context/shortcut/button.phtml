@@ -1,0 +1,40 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use qbo\PayPalMX\Block\Express\InContext\Minicart\Button;
+
+/**
+ * @var \Magento\Paypal\Block\Express\InContext\Minicart\Button $block
+ */
+$config = [
+    'Magento_Paypal/js/in-context/button' => [
+        'id' => $block->getContainerId(),
+        'paypalButton' => Button::PAYPAL_BUTTON_ID,
+        'addToCartSelector' => $block->getAddToCartSelector()
+    ]
+];
+
+?>
+<style>
+.text-bellow-ppb{
+    color: #039ee1;
+    width: 100%;
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+}
+</style>
+<div data-mage-init='<?php /* @noEscape */ echo json_encode($config); ?>'
+     class="paypal checkout paypal-logo <?php /* @noEscape */ echo $block->getContainerId(); ?>-container">
+    <a id="<?php /* @noEscape */ echo $block->getContainerId(); ?>" href="#">
+        <img class="paypal-button-hidden"
+             src="<?php echo $block->getImageUrlButtonMx(); ?>"
+             alt="Check out with PayPal" />
+    </a>
+    <span class="text-bellow-ppb">La forma rápida y segura de pagar</span>
+</div>
+ 
