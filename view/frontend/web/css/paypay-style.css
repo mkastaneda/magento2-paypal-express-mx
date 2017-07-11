@@ -103,12 +103,12 @@
 }
 .paypal-img-banner{
 	background-image: url(../img/out-banners.jpg);
-    width: 475px;
-    height: 70px;
+    width: 515px;
+    height: 85px;
     position: relative;
     background-repeat: no-repeat;
     margin-top: 10px;
-    background-size: 475px 70px;
+    background-size: 515px 85px;
 }
 .text-bellow-ppb{
     color: blue;
