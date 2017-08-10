@@ -1,6 +1,6 @@
 .how-paypal{
 	float: right;
-    right: 20%;
+    right: 30%;
     position: relative;
 }
 .how-paypal a{
@@ -103,12 +103,12 @@
 }
 .paypal-img-banner{
 	background-image: url(../img/out-banners.jpg);
-    width: 616px;
-    height: 86px;
+    width: 556px;
+    height: 73px;
     position: relative;
     background-repeat: no-repeat;
     margin-top: 10px;
-    background-size: 616px 86px;
+    background-size: 556px 73px;
 }
 .text-bellow-ppb{
     color: blue;
