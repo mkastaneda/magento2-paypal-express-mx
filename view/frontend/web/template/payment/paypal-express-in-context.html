@@ -44,9 +44,9 @@
 <!--         ko foreach: getRegion('messages') -->
 <!--         ko template: getTemplate() --><!-- /ko -->
 <!--         /ko -->
-<!--         <fieldset class="fieldset" data-bind='attr: {id: "payment_form_" + getCode('Express')}'> -->
-<!--             ko template: 'Magento_Paypal/payment/express/billing-agreement' --><!-- /ko -->
-<!--         </fieldset> -->
+        <fieldset class="fieldset" data-bind='attr: {id: "payment_form_paypal_express_Express"}'>
+		    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement' --><!-- /ko -->
+		</fieldset>
         <div class="checkout-agreements-block">
 <!--             ko foreach: $parent.getRegion('before-place-order') -->
 <!--                 ko template: getTemplate() --><!-- /ko -->
@@ -57,40 +57,6 @@
         </div>
     </div>
 </div>
-
-<!--  *******************************************************************  -->
-<!--  ****************** METODO TARJETAS DE DEBITO **********************  -->
-<!--  *******************************************************************  -->
-
-<!-- <div class="payment-method" data-bind="css: {'_active': (getCode('Cards') == isChecked())}"> -->
-<!--     <div class="payment-method-title field choice"> -->
-<!--         <input type="radio" -->
-<!--                name="payment[method]" -->
-<!--                class="radio checkRadio" -->
-<!--                data-bind="attr: {'id': getCode('Cards')}, value: getCode('Cards'), checked: isChecked, click: selectPaymentMethodCarts, visible: isRadioButtonVisible()" /> -->
-<!--         <label data-bind="attr: {'for': getCode('Cards')}" class="label"> -->
-            <!-- PayPal Logo -->
-<!--             <img data-bind="attr: {src: getPaymentAcceptanceDcSrc(), alt: $t('Acceptance Mark')}" -->
-<!--                  class="payment-icon"/> -->
-<!--         </label> -->
-<!--     </div> -->
-<!--     <div class="payment-method-content"> -->
-        <!-- ko foreach: getRegion('messages') -->
-        <!-- ko template: getTemplate() --><!-- /ko -->
-        <!--/ko-->
-<!--         <fieldset class="fieldset" data-bind='attr: {id: "payment_form_" + getCode('Cards')}'> -->
-            <!-- ko template: 'Magento_Paypal/payment/express/billing-agreement' --><!-- /ko -->
-<!--         </fieldset> -->
-<!--         <div class="checkout-agreements-block"> -->
-            <!-- ko foreach: $parent.getRegion('before-place-order') -->
-                <!-- ko template: getTemplate() --><!-- /ko -->
-            <!--/ko-->
-<!--         </div> -->
-<!--         <div class="actions-toolbar"> -->
-<!--             <div class="primary" data-bind="attr: {'id': getCode('Cards_button')}"></div> -->
-<!--         </div> -->
-<!--     </div> -->
-<!-- </div> -->
 
 <!-- ko if: getIsInstallmentEnabled() -->
 <div class="payment-method" data-bind="css: {'_active': (getCode('Installments') == isChecked())}">
@@ -109,9 +75,9 @@
         <!-- ko foreach: getRegion('messages') -->
         <!-- ko template: getTemplate() --><!-- /ko -->
         <!--/ko-->
-<!--         <fieldset class="fieldset" data-bind='attr: {id: "payment_form_" + getCode('Installments')}'> -->
-            <!-- ko template: 'Magento_Paypal/payment/express/billing-agreement' --><!-- /ko -->
-<!--         </fieldset> -->
+        <fieldset class="fieldset" data-bind='attr: {id: "payment_form_" + getCode('Installments')}'>
+		    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement' --><!-- /ko -->
+		</fieldset>
         <div class="checkout-agreements-block">
             <!-- ko foreach: $parent.getRegion('before-place-order') -->
                 <!-- ko template: getTemplate() --><!-- /ko -->

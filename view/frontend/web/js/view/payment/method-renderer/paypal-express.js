@@ -47,6 +47,10 @@ define(
             },
             selectPaymentMethodExpress: function() {
                 var data = this.getData();
+                
+                console.log("------------------");
+                console.log(data.method);
+                
                 data.method = data.method + "_Express";
                 selectPaymentMethodAction(data);
                 checkoutData.setSelectedPaymentMethod(this.item.method);

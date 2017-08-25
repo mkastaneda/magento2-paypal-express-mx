@@ -127,6 +127,7 @@ define(
             },
             isChecked: ko.computed(function () {
             	var classButtonActive = jQuery(".checkRadio:checked").val();
+            	
             	if(classButtonActive){
             		$(".buttonRadioActive").appendTo("#"+classButtonActive+"_button");
             		$(".buttonRadioActive").show();
