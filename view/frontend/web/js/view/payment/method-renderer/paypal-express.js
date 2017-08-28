@@ -20,23 +20,23 @@ define(
                 template: 'qbo_PayPalMX/payment/paypal-express'
             },
             id: null,
-
             /** Returns payment acceptance mark image path */
             getPaymentAcceptanceCcSrc: function() {
                 return "https://www.paypalobjects.com/webstatic/es_MX/mktg/logos-buttons/redesign/TDC_btn_1.png";
             },
-
             /** Returns payment acceptance mark image path */
             getPaymentAcceptanceDcSrc: function() {
                 return "https://www.paypalobjects.com/digitalassets/c/website/marketing/latam/mx/logos-buttons/tarjetas-debito-2-1.png";
             },
-
             /** Returns payment acceptance mark image path */
             getPaymentAcceptanceSrc: function() {
                 return "https://www.paypalobjects.com/webstatic/es_MX/mktg/logos-buttons/redesign/btn_msi_1.png";
             },
             getCode: function (id) {
                 return this.item.method +"_" + id;
+            },
+            getCodeMethodIdFieldset: function(method) {
+            	return "payment_form_" + this.getCode(method);
             },
             isChecked: ko.computed(function () {
                 return quote.paymentMethod() ? quote.paymentMethod().method : null;
@@ -47,9 +47,6 @@ define(
             },
             selectPaymentMethodExpress: function() {
                 var data = this.getData();
-                
-                console.log("------------------");
-                console.log(data.method);
                 
                 data.method = data.method + "_Express";
                 selectPaymentMethodAction(data);
@@ -70,8 +67,6 @@ define(
                 checkoutData.setSelectedPaymentMethod(this.item.method);
                 return true;
             }
-
-
         });
     }
 );

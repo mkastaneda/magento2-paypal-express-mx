@@ -56,7 +56,6 @@ define(
                                         function (response) {
                                             if (response && response.url) {
                                                 paypalExpressCheckout.checkout.startFlow(response.url);
-
                                                 return;
                                             }
                                             paypalExpressCheckout.checkout.closeFlow();
@@ -96,7 +95,6 @@ define(
                         this.clientConfig[name] = fn.bind(this);
                     }
                 }, this);
-                
                 domObserver.get("#" + this.getButtonId(), function () {
                     paypalExpressCheckout.checkout.setup(this.merchantId, this.clientConfig);
                 }.bind(this)); 
@@ -125,9 +123,11 @@ define(
             getCode: function (id) {
             	return this.item.method +"_" + id;
             },
+            getCodeMethodIdFieldset: function(method) {
+            	return "payment_form_" + this.getCode(method);
+            },
             isChecked: ko.computed(function () {
             	var classButtonActive = jQuery(".checkRadio:checked").val();
-            	
             	if(classButtonActive){
             		$(".buttonRadioActive").appendTo("#"+classButtonActive+"_button");
             		$(".buttonRadioActive").show();
