@@ -44,7 +44,7 @@
 			<!-- ko template: getTemplate() --><!-- /ko -->
 		<!-- /ko -->
         <fieldset class="fieldset" data-bind="attr: {id: getCodeMethodIdFieldset('Express')}">
-		    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement' --><!-- /ko -->
+		    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement-express' --><!-- /ko -->
 		</fieldset>
         <div class="checkout-agreements-block">
 		<!-- ko foreach: $parent.getRegion('before-place-order') -->
@@ -74,7 +74,7 @@
 	        	<!-- ko template: getTemplate() --><!-- /ko -->
 	        <!--/ko-->
 	        <fieldset class="fieldset" data-bind="attr: {id: getCodeMethodIdFieldset('Installments')}">
-			    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement' --><!-- /ko -->
+			    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement-installments' --><!-- /ko -->
 			</fieldset>
 	        <div class="checkout-agreements-block">
 	            <!-- ko foreach: $parent.getRegion('before-place-order') -->

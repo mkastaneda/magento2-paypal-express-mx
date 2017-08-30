@@ -47,7 +47,7 @@
         	<div class="payment-method-note">
                 <!-- ko i18n: 'You will be redirected to the PayPal website.' --><!-- /ko -->
             </div>
-		    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement' --><!-- /ko -->
+		    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement-express' --><!-- /ko -->
 		</fieldset>
         <div class="checkout-agreements-block">
 			<!-- ko foreach: $parent.getRegion('before-place-order') -->
@@ -80,7 +80,7 @@
 	        	<div class="payment-method-note">
 	                <!-- ko i18n: 'You will be redirected to the PayPal website.' --><!-- /ko -->
 	            </div>
-			    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement' --><!-- /ko -->
+			    <!-- ko template: 'qbo_PayPalMX/payment/express/billing-agreement-installments' --><!-- /ko -->
 			</fieldset>
 	        <div class="checkout-agreements-block">
 	            <!-- ko foreach: $parent.getRegion('before-place-order') -->
