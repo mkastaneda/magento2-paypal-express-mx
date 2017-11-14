@@ -13,4 +13,13 @@
             </argument>
         </arguments>
     </type>
+    
+    <type name="Magento\Paypal\Block\Express\InContext\Minicart\Button">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="template" xsi:type="string">qbo_PayPalMX::express/in-context/shortcut/button.phtml</item>
+            </argument>
+        </arguments>
+    </type>
+    
 </config>
