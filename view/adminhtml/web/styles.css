@@ -21,3 +21,10 @@
  *
  */
 .pp-method-express > .entry-edit-head > .config-heading:before { content:url(images/ppmx-alt.png);float:right;}
+
+.section-config.complex.paypal-express-section.with-button.enabled .config-alt {
+    background: url(images/ppmx-alt.png);
+    height: 32px;
+    margin: 0.5rem 0 0;
+    width: 170px;
+}
