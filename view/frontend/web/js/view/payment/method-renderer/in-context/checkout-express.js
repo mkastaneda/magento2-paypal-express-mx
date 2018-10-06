@@ -34,7 +34,7 @@ define(
         'use strict';
         return Component.extend({
             defaults: {
-                template: 'qbo_PayPalMX/payment/paypal-express-in-context',
+                template: 'Qbo_PayPalMX/payment/paypal-express-in-context',
                 clientConfig: {
                     /**
                      * @param {Object} event

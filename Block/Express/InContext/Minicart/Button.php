@@ -14,6 +14,6 @@ class Button extends MinicartButton
 {
                 
     public function getImageUrlButtonMx(){
-        return $this->getViewFileUrl('qbo_PayPalMX::img/buttonPpMx.png');
+        return $this->getViewFileUrl('Qbo_PayPalMX::img/buttonPpMx.png');
     }
 }

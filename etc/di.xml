@@ -9,7 +9,7 @@
 
     <type name="Magento\Paypal\Block\Express\Shortcut">
         <arguments>
-            <argument name="shortcutTemplate" xsi:type="string">qbo_PayPalMX::express/shortcut.phtml</argument>
+            <argument name="shortcutTemplate" xsi:type="string">Qbo_PayPalMX::express/shortcut.phtml</argument>
         </arguments>
     </type>
     
