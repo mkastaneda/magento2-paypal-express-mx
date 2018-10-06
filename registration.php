@@ -18,7 +18,7 @@
  *
  * @author Tadeo Barranco <tadeo@qbo.tech>
  * @category Qbo
- * @package qbo\PayPalMX\
+ * @package Qbo\PayPalMX\
  *
  */
 
