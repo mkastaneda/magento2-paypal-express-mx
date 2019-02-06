@@ -1,5 +1,5 @@
 <?php
-namespace qbo\PayPalMX\Model;
+namespace Qbo\PayPalMX\Model;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\Framework\UrlInterface;

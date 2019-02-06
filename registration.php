@@ -24,6 +24,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'qbo_PayPalMX',
+    'Qbo_PayPalMX',
     __DIR__
 );
