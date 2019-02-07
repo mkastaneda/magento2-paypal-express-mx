@@ -17,7 +17,7 @@ define(
         // data = {};
         return Component.extend({
             defaults: {
-                template: 'qbo_PayPalMX/payment/paypal-express'
+                template: 'Qbo_PayPalMX/payment/paypal-express'
             },
             id: null,
 
