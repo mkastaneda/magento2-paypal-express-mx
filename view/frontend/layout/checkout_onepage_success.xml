@@ -8,7 +8,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="order.success.additional.info" label="Order Success Additional Info">
-            <block class="qbo\PayPalMX\Block\Checkout\Success" name="paypal.success.additional" template="qbo_PayPalMX::checkout/success.phtml" cacheable="false" />
+            <block class="Qbo\PayPalMX\Block\Checkout\Success" name="paypal.success.additional" template="Qbo_PayPalMX::checkout/success.phtml" cacheable="false" />
         </referenceContainer>
     </body>
 </page>

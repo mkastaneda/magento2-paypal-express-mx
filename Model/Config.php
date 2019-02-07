@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace qbo\PayPalMX\Model;
+namespace Qbo\PayPalMX\Model;
 
 /**
  * Config model that is aware of all \Magento\Paypal payment methods

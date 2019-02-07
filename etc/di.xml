@@ -13,6 +13,6 @@
         </arguments>
     </type>
     
-    <preference for="Magento\Paypal\Block\Express\InContext\Minicart\Button" type="qbo\PayPalMX\Block\Express\InContext\Minicart\Button" />
-    <preference for="Magento\Paypal\Controller\Express\Start" type="qbo\PayPalMX\Controller\Express\Start" />
+    <preference for="Magento\Paypal\Block\Express\InContext\Minicart\Button" type="Qbo\PayPalMX\Block\Express\InContext\Minicart\Button" />
+    <preference for="Magento\Paypal\Controller\Express\Start" type="Qbo\PayPalMX\Controller\Express\Start" />
 </config>

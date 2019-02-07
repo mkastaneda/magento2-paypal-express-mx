@@ -9,7 +9,7 @@
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
             <argument name="configProviders" xsi:type="array">
-                <item name="qbo_paypalmx_config_provider" xsi:type="object">qbo\PayPalMX\Model\ConfigProvider</item>
+                <item name="qbo_paypalmx_config_provider" xsi:type="object">Qbo\PayPalMX\Model\ConfigProvider</item>
             </argument>
         </arguments>
     </type>
