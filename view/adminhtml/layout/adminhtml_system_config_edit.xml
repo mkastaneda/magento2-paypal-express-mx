@@ -19,12 +19,12 @@
  *
  * @author Tadeo Barranco <tadeo@qbo.tech>
  * @category Qbo
- * @package qbo\PayPalMX\
+ * @package Qbo\PayPalMX\
  *
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="qbo_PayPalMX::styles.css"/>
+        <css src="Qbo_PayPalMX::styles.css"/>
     </head>
 </page>

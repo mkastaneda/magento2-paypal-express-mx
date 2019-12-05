@@ -1,6 +1,6 @@
 <?php
 
-namespace qbo\PayPalMX\Block\Checkout;
+namespace Qbo\PayPalMX\Block\Checkout;
 
 class Success extends \Magento\Checkout\Block\Onepage\Success
 {

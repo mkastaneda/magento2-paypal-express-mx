@@ -9,10 +9,10 @@
 
     <type name="Magento\Paypal\Block\Express\Shortcut">
         <arguments>
-            <argument name="shortcutTemplate" xsi:type="string">qbo_PayPalMX::express/shortcut.phtml</argument>
+            <argument name="shortcutTemplate" xsi:type="string">Qbo_PayPalMX::express/shortcut.phtml</argument>
         </arguments>
     </type>
     
-    <preference for="Magento\Paypal\Block\Express\InContext\Minicart\Button" type="qbo\PayPalMX\Block\Express\InContext\Minicart\Button" />
-    <preference for="Magento\Paypal\Controller\Express\Start" type="qbo\PayPalMX\Controller\Express\Start" />
+    <preference for="Magento\Paypal\Block\Express\InContext\Minicart\Button" type="Qbo\PayPalMX\Block\Express\InContext\Minicart\Button" />
+    <preference for="Magento\Paypal\Controller\Express\Start" type="Qbo\PayPalMX\Controller\Express\Start" />
 </config>

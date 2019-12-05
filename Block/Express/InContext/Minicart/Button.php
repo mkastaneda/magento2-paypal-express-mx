@@ -3,7 +3,7 @@
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace qbo\PayPalMX\Block\Express\InContext\Minicart;
+namespace Qbo\PayPalMX\Block\Express\InContext\Minicart;
 
 use Magento\Paypal\Block\Express\InContext\Minicart\Button as MinicartButton;
 
@@ -14,6 +14,6 @@ class Button extends MinicartButton
 {
                 
     public function getImageUrlButtonMx(){
-        return $this->getViewFileUrl('qbo_PayPalMX::img/buttonPpMx.png');
+        return $this->getViewFileUrl('Qbo_PayPalMX::img/buttonPpMx.png');
     }
 }

@@ -18,12 +18,12 @@
  *
  * @author Tadeo Barranco <tadeo@qbo.tech>
  * @category Qbo
- * @package qbo\PayPalMX\
+ * @package Qbo\PayPalMX\
  *
  */
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'qbo_PayPalMX',
+    'Qbo_PayPalMX',
     __DIR__
 );

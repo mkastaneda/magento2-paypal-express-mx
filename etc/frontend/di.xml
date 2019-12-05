@@ -9,17 +9,17 @@
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>
             <argument name="configProviders" xsi:type="array">
-                <item name="qbo_paypalmx_config_provider" xsi:type="object">qbo\PayPalMX\Model\ConfigProvider</item>
+                <item name="qbo_paypalmx_config_provider" xsi:type="object">Qbo\PayPalMX\Model\ConfigProvider</item>
             </argument>
         </arguments>
     </type>
-    
+
     <type name="Magento\Paypal\Block\Express\InContext\Minicart\Button">
         <arguments>
             <argument name="data" xsi:type="array">
-                <item name="template" xsi:type="string">qbo_PayPalMX::express/in-context/shortcut/button.phtml</item>
+                <item name="template" xsi:type="string">Qbo_PayPalMX::express/in-context/shortcut/button.phtml</item>
             </argument>
         </arguments>
     </type>
-    
+
 </config>
